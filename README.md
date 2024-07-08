@@ -23,9 +23,6 @@ Recommended:
 
 
 
-## by Odubajo Qoyyum
-
-
 For this project we will be performing Analysis trying to predict if the patient is likely to have a heart failure. The features of the data are as follows:
 
 Features:
