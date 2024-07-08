@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Results</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.1);
+            margin-top: 20px;
+        }
+        .data-table {
+            margin-top: 20px;
+            overflow-x: auto; /* Add horizontal scroll */
+        }
+        table {
+            width: 100%; /* Ensure table takes full width */
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd; /* Add borders */
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2; /* Header background color */
+        }
+        .btn-back {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 class="text-center">Prediction Results</h2>
+        <div class="data-table">
+            {% if prediction is defined %}
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Prediction</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{ prediction }}</td>
+                    </tr>
+                </tbody>
+            </table>
+            {% endif %}
+            
+            {% for table in tables %}
+                {{ table|safe }}
+            {% endfor %}
+        </div>
+        <a href="/upload" class="btn btn-primary btn-back">Back to Form</a>
+    </div>
+</body>
+</html>

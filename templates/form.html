@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Failure Prediction Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.1);
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #0093e9;
+        }
+        label {
+            font-weight: bold;
+        }
+        .form-control {
+            border-radius: 5px;
+        }
+        .btn-primary {
+            background-color: #0093e9;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            margin-top: 20px;
+        }
+        .btn-primary:hover {
+            background-color: #80d0c7;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="form h-100 contact-wrap p-5">
+            <h2>Heart Failure Detector</h2>
+            <p>A Machine Learning App which predicts heart failure based on user input.</p>
+            <form action="/predict" method="post">
+                <div class="mb-3">
+                    <label for="age" class="form-label">Age:</label>
+                    <input type="number" class="form-control" id="age" name="age" placeholder="Enter age" required>
+                </div>
+                <div class="mb-3">
+                    <label for="sex" class="form-label">Sex:</label>
+                    <select class="form-select" id="sex" name="sex" required>
+                        <option value="M">Male</option>
+                        <option value="F">Female</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="chest_pain_type" class="form-label">Chest Pain Type:</label>
+                    <input type="text" class="form-control" id="chest_pain_type" name="chest_pain_type" placeholder="Enter chest pain type" required>
+                </div>
+                <div class="mb-3">
+                    <label for="resting_bp" class="form-label">Resting Blood Pressure (mm Hg):</label>
+                    <input type="number" class="form-control" id="resting_bp" name="resting_bp" placeholder="Enter resting BP" required>
+                </div>
+                <div class="mb-3">
+                    <label for="cholesterol" class="form-label">Serum Cholesterol (mm/dl):</label>
+                    <input type="number" class="form-control" id="cholesterol" name="cholesterol" placeholder="Enter cholesterol" required>
+                </div>
+                <div class="mb-3">
+                    <label for="fasting_bs" class="form-label">Fasting Blood Sugar (mg/dl):</label>
+                    <input type="number" class="form-control" id="fasting_bs" name="fasting_bs" placeholder="Enter fasting BS" required>
+                </div>
+                <div class="mb-3">
+                    <label for="resting_ECG" class="form-label">Resting ECG:</label>
+                    <input type="text" class="form-control" id="resting_ECG" name="resting_ECG" placeholder="Enter resting ECG" required>
+                </div>
+                <div class="mb-3">
+                    <label for="maxHR" class="form-label">Maximum Heart Rate Achieved:</label>
+                    <input type="number" class="form-control" id="maxHR" name="maxHR" placeholder="Enter max HR" required>
+                </div>
+                <div class="mb-3">
+                    <label for="exercise_angina" class="form-label">Exercise-Induced Angina:</label>
+                    <select class="form-select" id="exercise_angina" name="exercise_angina" required>
+                        <option value="N">No</option>
+                        <option value="Y">Yes</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="old_peak" class="form-label">Oldpeak (ST Depression):</label>
+                    <input type="number" step="0.1" class="form-control" id="old_peak" name="old_peak" placeholder="Enter old peak" required>
+                </div>
+                <div class="mb-3">
+                    <label for="ST_slope" class="form-label">ST Slope:</label>
+                    <input type="text" class="form-control" id="ST_slope" name="ST_slope" placeholder="Enter ST slope" required>
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary">Predict</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
