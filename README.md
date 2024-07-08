@@ -17,9 +17,6 @@ You'll need to install:
 
 And additional libraries defined in each project.
 
-Recommended:
-
-* [Anaconda](https://www.anaconda.com/distribution/#download-section)
 
 
 
